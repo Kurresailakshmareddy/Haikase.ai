@@ -6,3 +6,5 @@
 * The client is required to have a website and the content of the website needs to be changed by themselves with an admin login.
 
 * Utilising web technologies and IDE (HTML, CSS, PHP, MySQL, Visual Studio, FileZilla, PHP My admin) to build the website.
+
+### This project has copyrights 
