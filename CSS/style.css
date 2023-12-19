@@ -48,7 +48,7 @@ body.dark-theme {
 
 #banner {
   background: linear-gradient(rgba(0, 0, 0, 0.5), var(--color)),
-    url("../images/bg1.png");
+    url("../vecteezy.com/bg-1.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -56,7 +56,7 @@ body.dark-theme {
 
 #banner2 {
   background: linear-gradient(rgba(0, 0, 0, 0.5), var(--color)),
-    url("../images/bg1.png");
+    url("../vecteezy.com/bg-1.jpg");
   background-size: cover;
   background-position: center;
   height: 55vh;
