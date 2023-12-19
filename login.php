@@ -8,7 +8,7 @@ if (isset($_POST["login"])) {
     $email = $conn->real_escape_string($_POST["email"]);
     $password = $conn->real_escape_string($_POST["password"]);
 
-    $sql = " SELECT * FROM `admin` WHERE `email` = '$email' ";
+    $sql = " SELECT * FROM `admin` WHERE `email` = '$email'";
 
     $query = $conn->query($sql);
 

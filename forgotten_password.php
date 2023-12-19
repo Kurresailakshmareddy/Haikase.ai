@@ -8,9 +8,9 @@ if (isset($_POST["login"])) {
     $email = $conn->real_escape_string($_POST["email"]);
     $password = $conn->real_escape_string($_POST["password"]);
 
-    $password = md5('password');
+    // $password = md5($password);
 
-    $sql = " UPDATE `admin` SET `password`= '$password'   WHERE `email`= '$email' ";
+    $sql = " UPDATE `admin` SET `password` = '$password'   WHERE `email`= '$email' ";
 
     if ($conn->query($sql) === TRUE) {
         $_SESSION["success"] = " Password Updated successfully . ";
