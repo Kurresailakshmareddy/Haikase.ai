@@ -5,8 +5,6 @@ require("function.php");
 
 if (isset($_POST["login"])) {
 
-
-    
     $email = $conn->real_escape_string($_POST["email"]);
     $password = $conn->real_escape_string($_POST["password"]);
 
@@ -16,7 +14,6 @@ if (isset($_POST["login"])) {
 
 
     if ($query->num_rows > 0) {
-
         $arr = $query->fetch_assoc();
         if ($arr['password'] == $password) {
             $_SESSION["admin_id"] = $arr["id"];
@@ -31,6 +28,7 @@ if (isset($_POST["login"])) {
     }
 }
 ?>
+
 <!-- <section class="banner">
     <div class="container">
         <div class="row">

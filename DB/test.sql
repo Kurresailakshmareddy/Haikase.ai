@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2023 at 01:03 AM
+-- Generation Time: Nov 20, 2023 at 02:09 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -47,19 +47,19 @@ INSERT INTO `about` (`id`, `name`, `image`, `message`) VALUES
 -- Table structure for table `admin`
 --
 
--- CREATE TABLE `admin` (
---   `id` int(11) NOT NULL,
---   `name` varchar(250) DEFAULT NULL,
---   `email` varchar(250) DEFAULT NULL,
---   `password` varchar(250) DEFAULT NULL
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(250) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `password` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --
--- -- Dumping data for table `admin`
--- --
+--
+-- Dumping data for table `admin`
+--
 
--- INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES
--- (1, 'admin', 'test@gmail.com', 'admin@123');
+INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES
+(1, 'admin', 'test@gmail.com', 'admin@123');
 
 -- --------------------------------------------------------
 
@@ -79,8 +79,45 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`id`, `name`, `image`, `message`) VALUES
-(2, 'Coming Soon', 'contact1.png', 'testing                    '),
 (3, 'Coming Soon', 'img.jpg', 'Website is Under Maintenance ⛑ ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL,
+  `full_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `occupation` varchar(255) NOT NULL,
+  `job_title` varchar(255) NOT NULL,
+  `business_website` varchar(255) DEFAULT NULL,
+  `telephone` varchar(20) DEFAULT NULL,
+  `interest_prompt` text DEFAULT NULL,
+  `may_contact` varchar(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gethelp`
+--
+
+CREATE TABLE `gethelp` (
+  `id` int(11) NOT NULL,
+  `full_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `gethelp`
+--
+
+INSERT INTO `gethelp` (`id`, `full_name`, `email`, `message`) VALUES
+(1, 'coming soon', 'hi@gmail.com', 'testing');
 
 -- --------------------------------------------------------
 
@@ -92,15 +129,16 @@ CREATE TABLE `news` (
   `id` int(10) NOT NULL,
   `name` varchar(250) DEFAULT NULL,
   `image` varchar(250) DEFAULT NULL,
-  `message` text DEFAULT NULL
+  `description` text DEFAULT NULL,
+  `file` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`id`, `name`, `image`, `message`) VALUES
-(1, 'Coming Soon', '1698936458img.jpg', 'Website is Under Maintenance ⛑ ');
+INSERT INTO `news` (`id`, `name`, `image`, `description`, `file`) VALUES
+(1, 'coming soon', '1700440869img.jpg', 'coming soon', 'Coming soon.pdf');
 
 --
 -- Indexes for dumped tables
@@ -116,6 +154,18 @@ ALTER TABLE `about`
 -- Indexes for table `article`
 --
 ALTER TABLE `article`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gethelp`
+--
+ALTER TABLE `gethelp`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -139,6 +189,18 @@ ALTER TABLE `about`
 --
 ALTER TABLE `article`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `gethelp`
+--
+ALTER TABLE `gethelp`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `news`

@@ -13,15 +13,15 @@ error_reporting(0);
 // $password = 'OMsai@120';
 // $dbname ='w21037098' ;
 
-$servername= 'localhost';
-$username= 'unn_w21037098';
-$password = 'OMsai@123';
-$dbname = 'unn_w21037098';
-
 // $servername= 'localhost';
-// $username= 'root';
-// $password = '';
-// $dbname = 'test';
+// $username= 'unn_w21037098';
+// $password = 'OMsai@123';
+// $dbname = 'unn_w21037098';
+
+$servername= 'localhost';
+$username= 'root';
+$password = '';
+$dbname = 'test';
 
 // $servername= 'localhost';
 // $username= 'root';

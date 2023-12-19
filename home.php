@@ -62,7 +62,7 @@ include("includes/header.php");
 
     <div class="service-box">
         <div class="single-service">
-            <img src="vecteezy.com/ai.jpg" alt="img" />
+            <img src="images/ai2.jpeg" alt="img" />
             <div class="overlay"></div>
             <div class="service-desc">
                 <h3>AI Consumers</h3>
@@ -74,14 +74,14 @@ include("includes/header.php");
                     placeat ad nisi!
                 </p>
                 <div class="service-btn">
-                    <a href="./services.php"><span></span>More Info</a>
+                    <a href="./services.html"><span></span>More Info</a>
                 </div>
             </div>
         </div>
 
 
         <div class="single-service">
-            <img src="vecteezy.com/ai-1.jpg" alt="img" />
+            <img src="images/ai2.jpeg" alt="img" />
             <div class="overlay"></div>
             <div class="service-desc">
                 <h3>AI Suppliers</h3>
@@ -93,7 +93,7 @@ include("includes/header.php");
                     placeat ad nisi!
                 </p>
                 <div class="service-btn">
-                    <a href="./services.php"><span></span>More Info</a>
+                    <a href="./services.html"><span></span>More Info</a>
                 </div>
             </div>
         </div>

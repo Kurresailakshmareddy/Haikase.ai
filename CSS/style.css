@@ -48,7 +48,7 @@ body.dark-theme {
 
 #banner {
   background: linear-gradient(rgba(0, 0, 0, 0.5), var(--color)),
-    url("../vecteezy.com/bg-1.jpg");
+    url("../images/bg1.png");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -56,7 +56,7 @@ body.dark-theme {
 
 #banner2 {
   background: linear-gradient(rgba(0, 0, 0, 0.5), var(--color)),
-    url("../vecteezy.com/bg-1.jpg");
+    url("../images/bg1.png");
   background-size: cover;
   background-position: center;
   height: 55vh;
@@ -442,12 +442,12 @@ nav ul li a:hover {
 
 #about {
   width: 100%;
-  padding: 50px 0;
+  padding: 70px 0;
 }
 
 .about-text {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 70px;
 }
 
 .about-text p {
@@ -767,7 +767,7 @@ hr {
 }
 
 .service_features-img img {
-  width: 60%;
+  width: 80%;
   border-radius: 10px;
 }
 
@@ -884,7 +884,7 @@ hr {
 
 #news {
   width: 100%;
-  padding: 50px 0;
+  padding: 70px 0;
 }
 
 #news2 {
@@ -894,7 +894,7 @@ hr {
 
 .news-text {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
 }
 
 .news-text p {
@@ -914,7 +914,7 @@ hr {
   background: linear-gradient(var(--color), var(--white));
   position: absolute;
   top: -25px;
-  left: 35px;
+  left: 20px;
   z-index: -1;
   transform: rotate(5deg);
   border-top-left-radius: 35px;
@@ -944,7 +944,7 @@ hr {
 .news-img {
   width: 350px;
   margin: auto;
-  padding: 10px;
+  padding: 20px;
   border: 2px solid var(--color);
   border-radius: 10px;
 }
@@ -1013,8 +1013,7 @@ hr {
 
 .blog-text p {
   margin: auto;
-  margin-top: 60px;
-  font-size: 45px;
+  font-size: 60px;
   color: var(--color);
   font-weight: bold;
   position: relative;
@@ -1029,7 +1028,7 @@ hr {
   background: linear-gradient(var(--color), var(--white));
   position: absolute;
   top: -25px;
-  left: 45px;
+  left: 20px;
   z-index: -1;
   transform: rotate(5deg);
   border-top-left-radius: 35px;
@@ -1057,18 +1056,25 @@ hr {
   margin-top: 15px;
 }
 
-.blog-img{
+/* .news-img{
     flex-basis: 40%;
     margin: auto;
+    padding: 20px;
     border: 2px solid var(--color);
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
-.blog-img img{
+.news-img img{
     font: bolder;
+    padding: 10px;
     font-size: 20px;
     
 }
+
+.news-img img figcaption{
+    width: 30%;
+    border-radius: 10px;
+} */
 
 .news_features h1 {
   text-align: left;
@@ -1100,11 +1106,11 @@ hr {
   }
 }
 
-/* -------------login form styling ------------------ */
+/* ------------------------------- */
 
 .login_container {
   width: 500px;
-  height: 380px;
+  height: 450px;
   margin: 100px auto;
   padding: 20px;
 }
@@ -1123,7 +1129,7 @@ hr {
 .form-group {
   font-size: 10px;
   border-radius: 10px;
-  padding: 20px 23px;
+  padding: 20px 50px;
   font-size: medium;
   font-weight: bolder;
 }
@@ -1155,8 +1161,8 @@ hr {
 
 .login2-text p {
   margin: auto 100px;
-  margin-top: 8px;
-  /* margin-bottom: 50px; */
+  margin-top: 20px;
+  margin-bottom: 30px;
   font-size: 25px;
   color: var(--color);
   font-weight: bold;
@@ -1283,6 +1289,7 @@ hr {
   height: auto;
   font-size: 20px;
   text-align: center;
+  margin-top: -30px;
 }
 
 .about_main,
@@ -1312,61 +1319,6 @@ hr {
 
 .feedback {
   margin: auto 400px;
-}
-
-.feedback-text, .content-text {
-  text-align: center;
-  padding-bottom: 30px;
-}
-
-.feedback-text p {
-  margin: auto;
-  margin-top: 60px;
-  font-size: 35px;
-  color: var(--color);
-  font-weight: bold;
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-}
-
-.feedback-text p::after {
-  content: "";
-  width: 50px;
-  height: 35px;
-  background: linear-gradient(var(--color), var(--white));
-  position: absolute;
-  top: -25px;
-  left: 100px;
-  z-index: -1;
-  transform: rotate(5deg);
-  border-top-left-radius: 35px;
-  border-bottom-right-radius: 35px;
-}
-
-.content-text p {
-  margin: auto;
-  margin-top: 60px;
-  font-size: 35px;
-  color: var(--color);
-  font-weight: bold;
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-}
-
-.content-text p::after {
-  content: "";
-  width: 50px;
-  height: 35px;
-  background: linear-gradient(var(--color), var(--white));
-  position: absolute;
-  top: -25px;
-  left: 35px;
-  z-index: -1;
-  transform: rotate(5deg);
-  border-top-left-radius: 35px;
-  border-bottom-right-radius: 35px;
 }
 
 .heading-text p {
@@ -1409,7 +1361,7 @@ hr {
 .login_form {
   float: right;
   width: 450px;
-  height: 100%;
+  height: 110%;
   margin: 20px;
   margin-right: 30px;
   border-radius: 15px;
@@ -1510,7 +1462,7 @@ section.page_nav ul {
     font-size: 15px;
   }
   .login-text p {
-    margin: auto 110px;
+    margin: auto 113px;
     margin-top: 20px;
     font-size: 15px;
     /* margin-bottom: 10px; */
@@ -1599,6 +1551,7 @@ section.page_nav ul {
   .content {
     width: 70px;
     height: 20px;
+    padding:20px;
   }
 
   .content a{
@@ -1771,6 +1724,29 @@ section.page_nav ul {
   line-height: 35px;
   color: black;
   text-decoration: none;
+}
+
+.footer-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+
+.footer-list li{
+  display: inline-block;
+  list-style: none;
+  font-size: 10px;
+}
+
+.footer-list li a {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+}
+
+.footer-list a:hover{
+  color:white;
 }
 
 .footer-right a:hover {

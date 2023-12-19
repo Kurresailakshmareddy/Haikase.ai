@@ -1,7 +1,7 @@
 <?php
 include("includes/header.php");
 
-echo '<div class="feedback-text">
+echo '<div class="about-text">
         <p>Haikase.AI Membership Expression of Interest Form</p>
       </div>';
 ?>

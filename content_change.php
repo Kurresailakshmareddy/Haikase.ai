@@ -1,7 +1,7 @@
 <?php
 include("includes/header.php");
 
-echo '<div class="content-text">
+echo '<div class="about-text">
         <p>CONTENT CHANGE</p>
       </div>';
 ?>

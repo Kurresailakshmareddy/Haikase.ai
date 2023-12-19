@@ -45,7 +45,7 @@ include("config.php");
             <nav>
                 <ul>
                     <li><a href="./home.php">HOME</a></li>
-                    <li><a href="./about.php">About</a></li>
+                    <li><a href="./about.php">ABOUT</a></li>
                     <li><a href="./services.php">SERVICES</a></li>
                     <li><a href="./news.php">NEWS</a></li>
                     <li><a href="./blogs.php">ARTICLE AND BLOGS</a></li>

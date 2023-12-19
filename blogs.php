@@ -1,7 +1,7 @@
 <?php
 include("includes/header.php");
 
-echo '<div class="blog-text">
+echo '<div class="about-text">
         <p>ARTICLES AND BLOGS</p>
       </div>';
 
@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
 
         <section id="blog">
             <div class="blog-box">
-                <div class="blog-img">
+                <div class="news-img">
                     <img alt="Image placeholder" style="width: 300px; height:300px;" src="./uploads/article/<?= $row["image"]; ?>">
                 </div>
                 <div class="blog_features">

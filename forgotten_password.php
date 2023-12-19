@@ -8,6 +8,8 @@ if (isset($_POST["login"])) {
     $email = $conn->real_escape_string($_POST["email"]);
     $password = $conn->real_escape_string($_POST["password"]);
 
+    $password = md5('password');
+
     $sql = " UPDATE `admin` SET `password`= '$password'   WHERE `email`= '$email' ";
 
     if ($conn->query($sql) === TRUE) {
@@ -18,6 +20,7 @@ if (isset($_POST["login"])) {
 }
 
 ?>
+
 <section>
 
     <div class="login_container">
