@@ -8,23 +8,25 @@ if (isset($_POST["login"])) {
     $email = $conn->real_escape_string($_POST["email"]);
     $password = $conn->real_escape_string($_POST["password"]);
 
-    $sql = " SELECT * FROM `admin` WHERE `email` = '$email'";
+    $password = md5($password);
+
+    $sql = " SELECT * FROM `admin` WHERE `email` = '$email' AND password='$password'";
 
     $query = $conn->query($sql);
 
 
     if ($query->num_rows > 0) {
         $arr = $query->fetch_assoc();
-        if ($arr['password'] == $password) {
+        if ($arr['email'] === $email && $arr['password'] === $password) {
             $_SESSION["admin_id"] = $arr["id"];
             $_SESSION["admin_name"] = $arr["name"];
             header("location:home.php");
             die();
         } else {
-            $_SESSION["error"] = " Incorrect password . ";
+            $_SESSION["error"] = " Incorrect User name or password :( ";
         }
     } else {
-        $_SESSION["error"] = " Incorrect login details . ";
+        $_SESSION["error"] = " Incorrect User name or password :( ";
     }
 }
 ?>
@@ -40,7 +42,6 @@ if (isset($_POST["login"])) {
 </section> -->
 
 <section>
-
 
     <div class="login_container">
         <div class="login_form">

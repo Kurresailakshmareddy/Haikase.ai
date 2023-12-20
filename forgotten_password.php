@@ -8,7 +8,7 @@ if (isset($_POST["login"])) {
     $email = $conn->real_escape_string($_POST["email"]);
     $password = $conn->real_escape_string($_POST["password"]);
 
-    // $password = md5($password);
+    $password = md5($password);
 
     $sql = " UPDATE `admin` SET `password` = '$password'   WHERE `email`= '$email' ";
 
@@ -28,7 +28,7 @@ if (isset($_POST["login"])) {
             <div class="login2-text">
                 <p>Forgotten Password</p>
             </div>
-            <form action="" method="post">
+            <form action="./forgotten_password.php" method="post">
                 <?php
                 if (isset($_SESSION["success"])) {
                     echo '<div class="success">' . $_SESSION["success"] . '</div>';

@@ -186,10 +186,10 @@ class PHPMailer {
   public $Port          = 25;
 
   /**
-   * Sets the SMTP HELO of the message (Default is $Hostname).
+   * Sets the SMTP HELLO of the message (Default is $Hostname).
    * @var string
    */
-  public $Helo          = '';
+  public $Hello          = '';
 
   /**
    * Sets connection prefix.
