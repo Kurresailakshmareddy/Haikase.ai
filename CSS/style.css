@@ -447,7 +447,7 @@ nav ul li a:hover {
 
 .about-text {
   text-align: center;
-  padding-bottom: 70px;
+  padding-bottom: 20px;
 }
 
 .about-text p {
@@ -737,7 +737,7 @@ hr {
   background: linear-gradient(var(--color), var(--white));
   position: absolute;
   top: -25px;
-  left: 20px;
+  left: 45px;
   z-index: -1;
   transform: rotate(5deg);
   border-top-left-radius: 35px;
@@ -944,7 +944,7 @@ hr {
 .news-img {
   width: 350px;
   margin: auto;
-  padding: 20px;
+  /* padding: 20px; */
   border: 2px solid var(--color);
   border-radius: 10px;
 }
@@ -1028,7 +1028,7 @@ hr {
   background: linear-gradient(var(--color), var(--white));
   position: absolute;
   top: -25px;
-  left: 20px;
+  left: 40px;
   z-index: -1;
   transform: rotate(5deg);
   border-top-left-radius: 35px;
@@ -1106,7 +1106,7 @@ hr {
   }
 }
 
-/* ------------------------------- */
+/* -------------login stylings------------------ */
 
 .login_container {
   width: 500px;
@@ -1129,9 +1129,13 @@ hr {
 .form-group {
   font-size: 10px;
   border-radius: 10px;
-  padding: 20px 50px;
+  padding: 20px 10px;
   font-size: medium;
   font-weight: bolder;
+}
+
+.login-text{
+  margin-top: 20px;
 }
 
 .login-text p {
@@ -1289,7 +1293,7 @@ hr {
   height: auto;
   font-size: 20px;
   text-align: center;
-  margin-top: -30px;
+  /* margin-top: -30px; */
 }
 
 .about_main,
@@ -1462,7 +1466,7 @@ section.page_nav ul {
     font-size: 15px;
   }
   .login-text p {
-    margin: auto 113px;
+    margin: auto 108px;
     margin-top: 20px;
     font-size: 15px;
     /* margin-bottom: 10px; */
@@ -1551,7 +1555,7 @@ section.page_nav ul {
   .content {
     width: 70px;
     height: 20px;
-    padding:20px;
+    /* padding:20px; */
   }
 
   .content a{
