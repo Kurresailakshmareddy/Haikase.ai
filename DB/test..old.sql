@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2023 at 11:54 AM
+-- Generation Time: Nov 20, 2023 at 02:09 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,7 +39,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `name`, `image`, `message`) VALUES
-(1, 'testing', '1698924361img.jpg', 'Our team of experts is at the forefront of the latest AI advancements, allowing us to deliver cutting-edge guidance to solutions that drive your business forward. We combine strategic thinking with innovative approaches to ensure your AI initiatives are successful.         ');
+(4, 'testing', '1698924361img.jpg', 'Our team of experts is at the forefront of the latest AI advancements, allowing us to deliver cutting-edge guidance to solutions that drive your business forward. We combine strategic thinking with innovative approaches to ensure your AI initiatives are successful.         ');
 
 -- --------------------------------------------------------
 
@@ -49,17 +49,17 @@ INSERT INTO `about` (`id`, `name`, `image`, `message`) VALUES
 
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `name` varchar(250) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `password` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES
-(1, 'admin', 'haikase.ai@gmail.com', '57e2e3215011e478a36743ef79acd40d');
+(1, 'admin', 'test@gmail.com', 'admin@123');
 
 -- --------------------------------------------------------
 
@@ -151,13 +151,6 @@ ALTER TABLE `about`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
 -- Indexes for table `article`
 --
 ALTER TABLE `article`
@@ -192,12 +185,6 @@ ALTER TABLE `about`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `article`
 --
 ALTER TABLE `article`
@@ -207,7 +194,7 @@ ALTER TABLE `article`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `gethelp`
