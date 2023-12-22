@@ -1134,13 +1134,13 @@ hr {
   font-weight: bolder;
 }
 
-.login-text{
+/* .login-text{
   margin-top: 20px;
-}
+} */
 
 .login-text p {
   margin: auto 161px;
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 25px;
   color: var(--color);
   font-weight: bold;
