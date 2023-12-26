@@ -134,7 +134,7 @@ if (isset($_GET["id"])) {
     } else {
         $_SESSION["error"] = "Error deleting record: " . $conn->error;
     }
-    header("location: add_news_offered.php");
+    header("location: newcontentchange.php");
     die();
 }
 ?>
