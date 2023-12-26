@@ -20,7 +20,7 @@ if (isset($_POST["login"])) {
         if ($arr['email'] === $email && $arr['password'] === $password) {
             $_SESSION["admin_id"] = $arr["id"];
             $_SESSION["admin_name"] = $arr["name"];
-            header("location:home.php");
+            header("location:index.php");
             die();
         } else {
             $_SESSION["error"] = " Incorrect User name or password :( ";
