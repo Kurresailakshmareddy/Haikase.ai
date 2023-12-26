@@ -18,16 +18,20 @@ error_reporting(0);
 // $password = 'OMsai@123';
 // $dbname = 'unn_w21037098';
 
+// $servername= 'localhost';
+// $username= '';
+// $password = '';
+// $dbname = 'test';
+
 $servername= 'localhost';
-$username= 'root';
-$password = '';
-$dbname = 'test';
+$username= 'haikase';
+$password = 'haikase.AI@123.ai';
+$dbname = 'haikase';
 
 // $servername= 'localhost';
 // $username= 'root';
 // $password = 'OMsai@123s';
 // $dbname = 'w21037098';
-
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
