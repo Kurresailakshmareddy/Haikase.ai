@@ -1129,7 +1129,7 @@ hr {
 .form-group {
   font-size: 10px;
   border-radius: 10px;
-  padding: 20px 10px;
+  padding: 20px 50px;
   font-size: medium;
   font-weight: bolder;
 }
@@ -1536,6 +1536,7 @@ section.page_nav ul {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
+    padding: 20px 10px;
   }
 
   .form-control {
