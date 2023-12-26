@@ -21,7 +21,7 @@ include("config.php");
     <div class="dark-theme">
 
         <section id="banner2">
-            <a href="./home.php">
+            <a href="./index.php">
                 <img src="./images/logo3.png" class="logo" alt="logo" />
             </a>
 
@@ -44,7 +44,7 @@ include("config.php");
             </div>
             <nav>
                 <ul>
-                    <li><a href="./home.php">HOME</a></li>
+                    <li><a href="./index.php">HOME</a></li>
                     <li><a href="./about.php">ABOUT</a></li>
                     <li><a href="./services.php">SERVICES</a></li>
                     <li><a href="./news.php">NEWS</a></li>
