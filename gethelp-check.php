@@ -3,7 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Create a connection
-    $conn = new mysqli('localhost', 'root', '', 'test');
+    $conn = new mysqli('localhost', 'haikase', 'haikase.AI@123.ai', 'haikase');
     // Check the connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
