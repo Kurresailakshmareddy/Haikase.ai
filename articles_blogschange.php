@@ -13,7 +13,6 @@ if (isset($_GET["edit"]) && !empty($_GET["edit"])) {
   }
 }
 
-
 if (isset($_POST["add-article"])) {
 
   $uploadOk = 0;
@@ -39,10 +38,12 @@ if (isset($_POST["add-article"])) {
 
     $name = $conn->real_escape_string($_POST["name"]);
     $message = $conn->real_escape_string($_POST["message"]);
+    $datetime = date("Y-m-d H:i:s");
 
     $sql = " INSERT INTO `article`( `name`, `image`, `message`) VALUES ( '$name' , '$image' , '$message' ) ; ";
+    $sql2 = " INSERT INTO `adminarticle`( `name`, `image`, `message`) VALUES ( '$name' , '$image' , '$message' ) ; ";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql) === TRUE && $conn->query($sql2) === TRUE) {
       $_SESSION["success"] = " New record created successfully . ";
     } else {
       $_SESSION["error"] = "Error: " . $sql . "<br>" . $conn->error;
@@ -61,6 +62,7 @@ if (isset($_POST["update-article"])) {
   $message = $conn->real_escape_string($_POST["message"]);
   $image = basename($_FILES["image"]["name"]);
   $image_name = $conn->real_escape_string($_POST["image_name"]);
+  $datetime = date("Y-m-d H:i:s");
 
 
   if (empty($image) && empty($image_name)) {
@@ -80,14 +82,15 @@ if (isset($_POST["update-article"])) {
   }
 
   $sql = " UPDATE `article` SET `name`= '" . $name . "' , `image`= '" . $image . "' , `message`= '$message'   WHERE `id`= '$_GET[edit]' ";
+  $sql2 = " INSERT INTO `adminarticle`( `name`, `image`, `message`,`datetime`) VALUES ( '$name' , '$image' , '$message', '$datetime' ) ; ";
 
-  if ($conn->query($sql) === TRUE) {
+  if ($conn->query($sql) === TRUE && $conn->query($sql2) === TRUE) {
     $_SESSION["success"] = " Record Updated successfully . ";
   } else {
     $_SESSION["error"] = "Error: " . $sql . "<br>" . $conn->error;
   }
 
-  header("location: ./article_blogschange.php");
+  header("location: ./articles_blogschange.php");
   die();
 }
 
@@ -159,7 +162,7 @@ if (isset($_GET["id"])) {
           <div class="form-group">
             <label for="image">Image</label>
             <?php if (!empty($article_data["image"])) { ?>
-              <img alt="Image placeholder" src="./uploads/article/<?= $article_data["image"]; ?>" class="avatar rounded mr-3 ">
+              <img alt="Image placeholder" src="./uploads/article/<?= $article_data["image"]; ?>" class="about_img">
               <input type="hidden" name="image_name" id="image_name" class="form-control" placeholder="Please the select the image in jpg/png" value="<?php echo $article_data['image']; ?>">
             <?php } ?>
             <input type="file" name="image" id="image" accept="image/*" class="form-control" placeholder="Please elect the image in jpg/png">
@@ -171,12 +174,13 @@ if (isset($_GET["id"])) {
                             </textarea>
           </div>
           <?php
-          if (!empty($about_data['id'])) {
+          if (!empty($article_data['id'])) {
           ?>
             <button class="aboutbtn" name="update-article" value="add-article">Update Article</button>
           <?php } else { ?>
             <button class="aboutbtn" name="add-article" value="add-article">Add Article</button>
           <?php } ?>
+          <button class="admin_newsbtn"><a href="./admin_article.php">Admin Table</a></button>
         </form>
       </div>
     </div>
@@ -188,7 +192,6 @@ if (isset($_GET["id"])) {
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th scope="col">No.</th>
                 <th scope="col">Image</th>
                 <th scope="col">Message</th>
                 <th>Action</th>
@@ -204,7 +207,6 @@ if (isset($_GET["id"])) {
                 while ($row = $result->fetch_assoc()) {
               ?>
                   <tr>
-                    <th scope="row"><?= $i; ?></th>
                     <td>
                       <div class="media align-items-center">
                         <img alt="Image placeholder" src="./uploads/article/<?= $row["image"]; ?>" class="about_img">

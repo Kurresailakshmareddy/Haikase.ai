@@ -1,19 +1,20 @@
 <?php
+
 include("includes/header.php");
 
 echo '<div class="about-text">
         <p>MemberShip View</p>
-      </div>';
+    </div>';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Create a connection
-    $conn = new mysqli("localhost", "root", "", "test");
+    // $conn = new mysqli("localhost", "root", "", "test");
 
-    // Check the connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    // // Check the connection
+    // if ($conn->connect_error) {
+    //     die("Connection failed: " . $conn->connect_error);
+    // }
 
     // Get the record ID to be deleted
     $record_id = mysqli_real_escape_string($conn, $_POST['record_id']);
@@ -57,11 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </section>
 
-
-
 <table class="form_view">
     <tr>
-        <th>ID</th>
         <th>Full Name</th>
         <th>Email</th>
         <th>Occupation</th>
@@ -79,7 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $i = 1;
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row['full_name'] . "</td>";
             echo "<td>" . $row['email'] . "</td>";
             echo "<td>" . $row['occupation'] . "</td>";

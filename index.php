@@ -43,7 +43,7 @@ include("includes/header.php");
                 </div>
             </div>
             <div class="features-btn">
-                <a href="./aboutus.html"><span></span>More Info</a>
+                <a href="./aboutus.php"><span></span>More Info</a>
             </div>
         </div>
         <div class="features-img">
@@ -52,7 +52,7 @@ include("includes/header.php");
     </div>
 </section>
 
-<!--Service   -->
+<!--Service -->
 
 <section id="service">
     <div class="title-text">

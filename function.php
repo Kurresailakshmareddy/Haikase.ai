@@ -1,6 +1,5 @@
 <?php
-require_once('class.phpmailer.php');
-
+// require_once('class.phpmailer.php');
 function check_login()
 {
     if (!isset($_SESSION["admin_id"]) && empty($_SESSION["admin_id"])) {
@@ -12,7 +11,7 @@ function check_login()
 function check_logout()
 {
     if (isset($_SESSION["admin_id"]) && !empty($_SESSION["admin_id"])) {
-        header("location:home.php");
+        header("location:index.php");
         die();
     }
 }

@@ -507,6 +507,7 @@ nav ul li a:hover {
 .about-img {
   flex-basis: 50%;
   margin: auto;
+  
 }
 
 .about-img img {
@@ -1233,13 +1234,30 @@ hr {
   width: 100px;
   height: 40px;
   color: var(--white);
-  margin: auto 400px;
+  margin: auto 250px;
   border: none;
   border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
   background-color: var(--color);
   transition: 0.4s ease;
+}
+
+.admin_newsbtn{
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: var(--color);
+  transition: 0.4s ease;
+}
+
+.admin_newsbtn a{
+  list-style: none;
+  color: var(--white);
+  text-decoration:none;
 }
 
 .btn {
@@ -1296,6 +1314,30 @@ hr {
   /* margin-top: -30px; */
 }
 
+.thankyou{
+  border: 2px solid rgba(0, 128, 0, 0.522);
+  border-radius: 30px;
+  background-color: rgba(0, 128, 0, 0.345);
+  padding:50px;
+  height:auto;
+}
+
+.thankyou h2{
+  text-align: center;
+}
+
+.sorry{
+  border: 2px solid rgba(255, 0, 0, 0.522);
+  border-radius: 30px;
+  background-color: rgba(255, 0, 0, 0.345);
+  padding:50px;
+  height:auto;
+}
+
+.sorry h2{
+  text-align: center;
+}
+
 .about_main,
 .news_main,
 .article_main,
@@ -1317,6 +1359,10 @@ hr {
   text-align: center;
 }
 
+.content_change{
+  text-align: center;
+}
+
 .alert {
   color: red;
 }
@@ -1326,7 +1372,7 @@ hr {
 }
 
 .heading-text p {
-  margin: auto 290px;
+  margin: auto 220px;
   margin-top: 20px;
   font-size: 35px;
   color: var(--color);
@@ -1378,6 +1424,7 @@ span {
 
 .table td {
   text-align: center;
+  padding: 10px;
 }
 
 .form_view {
@@ -1465,6 +1512,21 @@ section.page_nav ul {
     width: 200px;
     font-size: 15px;
   }
+
+  .thankyou{
+    width: 220px;
+    height:auto;
+    margin: 20px auto;
+    padding: -20px;
+  }
+
+  .sorry{
+    width: 220px;
+    height:auto;
+    margin: 20px auto;
+    padding: -20px;
+  }
+  
   .login-text p {
     margin: auto 108px;
     margin-top: 20px;
@@ -1607,13 +1669,13 @@ section.page_nav ul {
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px;
+    padding: 15px;
     margin-bottom: 40px;
     margin-top: 30px;
   }
 
   .aboutbtn,
-  .newsbtn {
+  .newsbtn, .admin_newsbtn {
     margin: auto 100px;
     margin-bottom: 5px;
   }
@@ -1639,8 +1701,9 @@ section.page_nav ul {
   }
 
   .heading-text p {
-    margin: auto 20px;
+    margin: auto 35px;
     font-size: 20px;
+    margin-top: 20px;
   }
 
   .loginbtn {
@@ -1666,6 +1729,7 @@ section.page_nav ul {
 
   .table td {
     text-align: center;
+    padding: 0px;
   }
 
   section.page_nav ul {

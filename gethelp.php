@@ -32,7 +32,7 @@ echo '<div class="about-text">
                         <textarea id="subject" name="messages" placeholder="Please Type Here.." class="form-control" style="height:100px" required></textarea>
                     </div>
 
-                    <input class="feedback loginbtn" type="submit" value="Submit">
+                    <input class="feedback loginbtn" type="submit" value="Submit" name="submit">
                 </form>
             </div>
 

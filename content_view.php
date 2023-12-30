@@ -28,8 +28,9 @@ echo '<div class="about-text">
 
 <section>
     <div class="feedback_main">
-        <div class="contact_form">
-            <p>Being a Haikase.AI member grants you first priority in staying informed about existing and future opportunities, collaborations, and emerging AI markets. It is important to note that membership does not entail ownership of shares in Haikase.AI, and there are no associated business or financial obligations. Instead, it is a means to cultivate a community of like-minded individuals, fostering information sharing, collaborative efforts, and access to future markets.</p>
+        <div class="content_change">
+            <h2>Welcome to Content View Page</h2>
+            <p>In this page you can view the form filled details using the above menu.</p>
         </div>
     </div>
 </section>

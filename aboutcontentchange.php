@@ -161,7 +161,7 @@ if (isset($_GET["id"])) {
           <div class="form-group">
             <label for="image">Image</label>
             <?php if (!empty($about_data["image"])) { ?>
-              <img alt="Image placeholder" src="./uploads/about/<?= $about_data["image"]; ?>" class="avatar rounded mr-3 ">
+              <img alt="Image placeholder" src="./uploads/about/<?= $about_data["image"]; ?>" class="about_img">
               <input type="hidden" name="image_name" id="image_name" class="form-control" placeholder="Please the select the image in jpg/png" value="<?php echo $about_data['image']; ?>">
             <?php } ?>
             <input type="file" name="image" id="image" accept="image/*" class="form-control" placeholder="Please elect the image in jpg/png">

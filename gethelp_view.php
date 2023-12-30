@@ -3,28 +3,28 @@ include("includes/header.php");
 
 echo '<div class="about-text">
         <p>MemberShip View</p>
-      </div>';
+        </div>';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Create a connection
-    $conn = new mysqli("localhost", "root", "", "test");
+    // $conn = new mysqli("localhost", "root", "", "test");
 
-    // Check the connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    // // Check the connection
+    // if ($conn->connect_error) {
+    //     die("Connection failed: " . $conn->connect_error);
+    // }
 
     // Get the record ID to be deleted
     $record_id = mysqli_real_escape_string($conn, $_POST['record_id']);
 
     // Delete the record from the database
-    $sql = "DELETE FROM feedback WHERE id = '$record_id'";
+    $sql = "DELETE FROM gethelp WHERE id = '$record_id'";
 
     if ($conn->query($sql) !== TRUE) {
         echo "Error deleting record: " . $conn->error;
     }
-    header("Location: feedback_view.php?success=Form deleted successfully");
+    header("Location: gethelp_view.php?success=Form deleted successfully");
     exit();
 }
 ?>
@@ -61,7 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <table class="form_view">
     <tr>
-        <th>ID</th>
         <th>Full Name</th>
         <th>Email</th>
         <th>Message</th>
@@ -74,7 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $i = 1;
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row['full_name'] . "</td>";
             echo "<td>" . $row['email'] . "</td>";
             echo "<td>" . $row['message'] . "</td>";

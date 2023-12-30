@@ -66,7 +66,7 @@ echo '<div class="about-text">
                         <input type="radio" id="contact_no" name="contact" value="no" required> No
                     </div>
 
-                    <input class="feedback loginbtn" type="submit" value="Submit">
+                    <input class="feedback loginbtn" type="submit" value="Submit" name="submit">
                 </form>
             </div>
 

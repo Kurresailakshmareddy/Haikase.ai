@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2023 at 11:54 AM
+-- Generation Time: Dec 30, 2023 at 07:44 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `haikase`
+-- Database: `test`
 --
 
 -- --------------------------------------------------------
@@ -39,7 +39,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `name`, `image`, `message`) VALUES
-(1, 'testing', '1698924361img.jpg', 'Our team of experts is at the forefront of the latest AI advancements, allowing us to deliver cutting-edge guidance to solutions that drive your business forward. We combine strategic thinking with innovative approaches to ensure your AI initiatives are successful.         ');
+(4, 'testing', '1698924361img.jpg', 'Our team of experts is at the forefront of the latest AI advancements, allowing us to deliver cutting-edge guidance to solutions that drive your business forward. We combine strategic thinking with innovative approaches to ensure your AI initiatives are successful.         ');
 
 -- --------------------------------------------------------
 
@@ -60,6 +60,35 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES
 (1, 'admin', 'haikase.ai@gmail.com', '57e2e3215011e478a36743ef79acd40d');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `adminarticle`
+--
+
+CREATE TABLE `adminarticle` (
+  `id` int(10) NOT NULL,
+  `name` varchar(250) DEFAULT NULL,
+  `image` varchar(250) DEFAULT NULL,
+  `message` text DEFAULT NULL,
+  `datetime` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `adminnews`
+--
+
+CREATE TABLE `adminnews` (
+  `id` int(10) NOT NULL,
+  `name` varchar(250) DEFAULT NULL,
+  `image` varchar(250) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `datetime` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -112,13 +141,6 @@ CREATE TABLE `gethelp` (
   `message` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `gethelp`
---
-
-INSERT INTO `gethelp` (`id`, `full_name`, `email`, `message`) VALUES
-(1, 'coming soon', 'hi@gmail.com', 'testing');
-
 -- --------------------------------------------------------
 
 --
@@ -158,6 +180,18 @@ ALTER TABLE `admin`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indexes for table `adminarticle`
+--
+ALTER TABLE `adminarticle`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `adminnews`
+--
+ALTER TABLE `adminnews`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `article`
 --
 ALTER TABLE `article`
@@ -189,37 +223,49 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `about`
 --
 ALTER TABLE `about`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+--
+-- AUTO_INCREMENT for table `adminarticle`
+--
+ALTER TABLE `adminarticle`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `adminnews`
+--
+ALTER TABLE `adminnews`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `gethelp`
 --
 ALTER TABLE `gethelp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

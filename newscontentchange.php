@@ -50,10 +50,12 @@ if (isset($_POST["add-news"])) {
 
         $name = $conn->real_escape_string($_POST["name"]);
         $message = $conn->real_escape_string($_POST["message"]);
+        $datetime = date("Y-m-d H:i:s");  
 
         $sql = " INSERT INTO `news`( `name`, `image`, `description`,`file`) VALUES ( '$name' , '$image' , '$message','$file') ; ";
+        $sql2 = " INSERT INTO `adminnews`( `name`, `image`, `description`,`file`, `datetime`) VALUES ( '$name' , '$image' , '$message','$file','$datetime') ; ";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) === TRUE && $conn->query($sql2) === TRUE) {
             $_SESSION["success"] = " New record created successfully . ";
         } else {
             $_SESSION["error"] = "Error: " . $sql . "<br>" . $conn->error;
@@ -72,6 +74,7 @@ if (isset($_POST["update-news"])) {
     $file = basename($_FILES["file"]["name"]);
     $image_name = $conn->real_escape_string($_POST["image_name"]);
     $file_name = $conn->real_escape_string($_POST["file_name"]);
+    $datetime = date("Y-m-d H:i:s");
 
 
     if (empty($image) && empty($image_name)) {
@@ -104,8 +107,9 @@ if (isset($_POST["update-news"])) {
     }
 
     $sql = " UPDATE `news` SET `name`= '" . $name . "' , `image`= '" . $image . "' , `description`= '" . $message . "'  , `file`= '" . $file . "' WHERE `id`= '$_GET[edit]' ";
+    $sql2 = " INSERT INTO `adminnews`( `name`, `image`, `description`,`file`, `datetime`) VALUES ( '$name' , '$image' , '$message','$file','$datetime') ; ";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql) === TRUE && $conn->query($sql2) === TRUE) {
         $_SESSION["success"] = " Record Updated successfully . ";
     } else {
         $_SESSION["error"] = "Error: " . $sql . "<br>" . $conn->error;
@@ -114,7 +118,6 @@ if (isset($_POST["update-news"])) {
     header("location: newscontentchange.php");
     die();
 }
-
 
 
 if (isset($_GET["id"])) {
@@ -134,7 +137,7 @@ if (isset($_GET["id"])) {
     } else {
         $_SESSION["error"] = "Error deleting record: " . $conn->error;
     }
-    header("location: newcontentchange.php");
+    header("location: newscontentchange.php");
     die();
 }
 ?>
@@ -186,7 +189,7 @@ if (isset($_GET["id"])) {
                         <div class="form-group">
                             <label for="image">Image</label>
                             <?php if (!empty($news_data["image"])) { ?>
-                                <img alt="Image Loading..!" src="./uploads/news/<?= $news_data["image"]; ?>" class="avatar rounded mr-3 " height="200">
+                                <img alt="Image Loading..!" src="./uploads/news/<?= $news_data["image"]; ?>" class="about_img" height="200">
                                 <input type="hidden" name="image_name" id="image_name" class="form-control" placeholder="Please select the image" value="<?php echo $news_data['image']; ?>">
                             <?php } ?>
                             <input type="file" name="image" placeholder="Please the select the image in jpg/png" id="image" accept="image/*" class="form-control">
@@ -212,6 +215,7 @@ if (isset($_GET["id"])) {
                         <?php } else { ?>
                             <button class="newsbtn" name="add-news" value="add-news">Add news</button>
                         <?php } ?>
+                        <button class="admin_newsbtn"><a href="./admin_news.php">Admin Table</a></button>
                     </form>
                 </div>
 
@@ -226,7 +230,7 @@ if (isset($_GET["id"])) {
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">No.</th>
+                                <!-- <th scope="col">No.</th> -->
                                 <th scope="col">Image</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">File</th>
@@ -243,9 +247,6 @@ if (isset($_GET["id"])) {
                                 while ($row = $result->fetch_assoc()) {
                             ?>
                                     <tr>
-                                        <th scope="row">
-                                            <?= $i; ?>
-                                        </th>
                                         <td>
                                             <div class="media align-items-center">
                                                 <img alt="Image placeholder" src="./uploads/news/<?= $row["image"]; ?>" class="about_img">
