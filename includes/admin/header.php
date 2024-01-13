@@ -1,6 +1,7 @@
 <?php
 include("../includes/config.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,6 @@ include("../includes/config.php");
     <meta charset="UTF-8" />
     <title>Haikase.AI</title>
     <link rel="shortcut icon" href="../images/footerlogo1.png" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="./CSS/style.css"/> -->
     <link rel="stylesheet" href="../CSS/style.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,17 +22,17 @@ include("../includes/config.php");
     <div class="dark-theme">
 
         <section id="banner2">
-            <a href="../index.php">
+            <a href="./home.php">
                 <img src="../images/logo3.png" class="logo" alt="logo" />
             </a>
 
             <div class="banner2-text">
                 <h1>HAIKASE.AI</h1>
                 <p>Nearer to Future</p>
-                <div class="banner-btn">
-                    <a href="../main/feedback_form.php"><span></span>Be a Member</a>
-                    <a href="../main/gethelp.php"><span></span>Get Help</a>
-                </div>
+                <!-- <div class="banner-btn">
+                    <a href="./feedback_form.php"><span></span>Be a Member</a>
+                    <a href="./gethelp.php"><span></span>Get Help</a>
+                </div> -->
             </div>
         </section>
 
@@ -45,13 +45,21 @@ include("../includes/config.php");
             </div>
             <nav>
                 <ul>
-                    <li><a href="../index.php">HOME</a></li>
-                    <li><a href="../main/about.php">ABOUT</a></li>
-                    <li><a href="../main/services.php">SERVICES</a></li>
-                    <li><a href="../main/news.php">NEWS</a></li>
-                    <li><a href="../main/blogs.php">ARTICLE AND BLOGS</a></li>
-                    <li><a href="../main/feedback_form.php">BE A MEMBER</a></li>
-                    <li><a href="../main/gethelp.php">GET HELP</a></li>
+                    <li><a href="./home.php">HOME</a></li>
+                    <li><a href="./about.php">ABOUT</a></li>
+                    <li><a href="./services.php">SERVICES</a></li>
+                    <li><a href="./news.php">NEWS</a></li>
+                    <li><a href="./blogs.php">ARTICLE AND BLOGS</a></li>
+                    <li><a href="../index.php" target="_blank">USER VIEW</a></li>
+                    <?php
+                    if (isset($_SESSION["admin_id"]) && !empty($_SESSION["admin_id"])) {
+                        echo '<li><a href="./content_change.php">CONTENT CHANGE</a></li>';
+                        echo '<li><a href="./content_view.php">CONTENT VIEW</a></li>';
+                        echo '<li><a href="./logout.php">LOGOUT</a></li>';
+                    } else {
+                        echo '<li><a href="#" target="_blank">View Email</a></li>';  
+                    }
+                    ?>
                 </ul>
             </nav>
         </div>

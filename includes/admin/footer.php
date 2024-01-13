@@ -5,7 +5,7 @@ $year = date("Y");
 ?>
 
 <section id="footer">
-    <img src="./images/footerlogo1.png" class="footer-img" alt="image">
+    <img src="../images/footerlogo1.png" class="footer-img" alt="image">
     <div class="title-text">
         <p>CONTACT</p>
         <h1>Feel Free To Contact Us</h1>
@@ -19,7 +19,7 @@ $year = date("Y");
         <div class="footer-right">
             <h1>Get In Touch</h1>
             <p>#30 abc Colony, xyz City IN<i class="fa fa-map-marker"></i></p>
-            <p><a href="gethelp.php">Get Help</a><i class="fa fa-paper-plane"></i></p>
+            <p><a href="./gethelp.php">Get Help</a><i class="fa fa-paper-plane"></i></p>
             <p><a href="tel:+01 123456789">+01 123456789</a><i class="fa fa-phone"></i></p>
         </div>
     </div>
